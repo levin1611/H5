@@ -12,6 +12,7 @@
 <script src="js/imgscroll.js"></script>
 <script src="js/slide.js"></script>
 <script src="js/json.js"></script>
+<script src="js/swiper.js"></script>
 <script>
 	(function (doc, win) { 
 		 var docEl = doc.documentElement,
@@ -88,7 +89,7 @@
     <h3>服务项目</h3>
     <div class="common">
       <div class="list">
-        <div class="style"> <img src="images/servise/s1.jpg"> <img src="images/servise/s1N.jpg"> <img src="images/servise/s2.jpg"> <img src="images/servise/s2N.jpg"> <img src="images/servise/s3.jpg"> <img src="images/servise/s3N.jpg"> <img src="images/servise/s4.jpg"> <img src="images/servise/s4N.jpg"> <img src="images/servise/s5.jpg"> <img src="images/servise/s5N.jpg"> <img src="images/servise/s6.jpg"> <img src="images/servise/s6N.jpg"> <img src="images/servise/s7.jpg"> <img src="images/servise/s7N.jpg"> <img src="images/servise/s8.jpg"> <img src="images/servise/s8N.jpg"> </div>
+        <div class="style"> <img onClick="projectShow(1)" src="images/servise/s1.jpg"> <img src="images/servise/s1N.jpg"> <img onClick="projectShow(2)" src="images/servise/s2.jpg"> <img src="images/servise/s2N.jpg"> <img onClick="projectShow(3)" src="images/servise/s3.jpg"> <img src="images/servise/s3N.jpg"> <img onClick="projectShow(4)" src="images/servise/s4.jpg"> <img src="images/servise/s4N.jpg"> <img onClick="projectShow(5)" src="images/servise/s5.jpg"> <img src="images/servise/s5N.jpg"> <img  onClick="projectShow(6)" src="images/servise/s6.jpg"> <img src="images/servise/s6N.jpg"> <img onClick="projectShow(7)" src="images/servise/s7.jpg"> <img src="images/servise/s7N.jpg"> <img onClick="projectShow(8)" src="images/servise/s8.jpg"> <img src="images/servise/s8N.jpg"> </div>
       </div>
       <div class="list">
         <div class="material"> <img src="images/servise/ma1.jpg"> <img src="images/servise/ma1N.jpg"> <img src="images/servise/ma2.jpg"> <img src="images/servise/ma2N.jpg"> <img src="images/servise/ma3.jpg"> <img src="images/servise/ma3N.jpg"> <img src="images/servise/ma4.jpg"> <img src="images/servise/ma4N.jpg"> <img src="images/servise/ma5.jpg"> <img src="images/servise/ma5N.jpg"> <img src="images/servise/ma6.jpg"> <img src="images/servise/ma6N.jpg"> <img src="images/servise/ma7.jpg"> <img src="images/servise/ma7N.jpg"> <img src="images/servise/ma8.jpg"> <img src="images/servise/ma8N.jpg"> </div>
@@ -320,13 +321,17 @@
 </div>
 <div class="project_show">
 	<a href="javascript:void(0)" class="bts leftBtn"><img src="images/about/left.png"></a>
-    <a href="javascript:void(0)" class="project_close"><img src="images/about/left.png"></a>
-    <div class="projectImg">
+    <a href="javascript:void(0)" class="project_close"></a>
+    <div class="projectImg" id="box">
         <ul id="list" class="list">
-            <li class="li"><img src="images/b1.jpg" alt=""></li>
-            <li class="li"><img src="images/b2.jpg" alt=""></li>
-            <li class="li"><img src="images/b3.jpg" alt=""></li>
-            <li class="li"><img src="images/b4.jpg" alt=""></li>
+            <li class="li"><img src="images/servise/banner1.jpg" alt=""></li>
+            <li class="li"><img src="images/servise/banner2.jpg" alt=""></li>
+            <li class="li"><img src="images/servise/banner3.jpg" alt=""></li>
+            <li class="li"><img src="images/servise/banner4.jpg" alt=""></li>
+            <li class="li"><img src="images/servise/banner5.jpg" alt=""></li>
+            <li class="li"><img src="images/servise/banner6.jpg" alt=""></li>
+            <li class="li"><img src="images/servise/banner7.jpg" alt=""></li>
+            <li class="li"><img src="images/servise/banner8.jpg" alt=""></li>
         </ul>
     </div>
     <a href="javascript:void(0)" class="bts rightBtn"><img src="images/about/right.png"></a>
@@ -604,7 +609,26 @@ $(function() {
 			$('.case_show').css({'z-index': showNo,'opacity':1});
 		}
 		function projectShow(id){
-			
+			$('.project_show').show();
+			var showN = id -1;
+			var next = id+ 1;
+			if(id == 1){
+				
+				$('.leftBtn').attr('onclick','projectShow(8)');
+				$('.rightBtn').attr('onclick','projectShow('+next+')')
+				$('#list > li').eq(showN).show();
+				$('#list > li').eq(showN).show().siblings().hide();
+			}else if(id == 8){	
+				$('.leftBtn').attr('onclick','projectShow('+showN+')');
+				$('.rightBtn').attr('onclick','projectShow(1)');
+				$('#list > li').eq(showN).show();
+				$('#list > li').eq(showN).show().siblings().hide();
+			}else {
+				$('.leftBtn').attr('onclick','projectShow('+showN+')');
+				$('.rightBtn').attr('onclick','projectShow('+next+')');
+				$('#list > li').eq(showN).show();
+				$('#list > li').eq(showN).show().siblings().hide();
+			}
 			
 		}
 </script>

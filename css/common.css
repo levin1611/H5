@@ -1004,6 +1004,9 @@ html {
 	padding:6% 2.24% 0;
 	overflow:hidden;
 }
+.projectImg{position:absolute; width:78.402%; height:47.555%; overflow:hidden; top:30%; left:11.45833%;}
+.projectImg li{ position:absolute;width:100%; top:0;left:0; overflow:hidden; display:none}
+.projectImg img{ display:block; width:100%;}
 .pics{ width:60.216%; position:relative;}
 .test{ width:34.473%;}
 .test h4{ text-align:left; line-height:1;margin:2.34rem 0 0.64rem; font-size:0.72rem; font-weight:bold;}
