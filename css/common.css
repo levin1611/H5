@@ -25,7 +25,7 @@ ol, ul,li {
 	list-style:none;
 }
 html {
-	font-family:pingfangsc,pingfang,Helvetica;
+	font-family:pingfangsc,pingfang,PingFangSC-Ultralight, PingFangSC-Light,PingFangSC-Thin,PingFangSC-Medium, PingFangSC-Regular, sans-serif,Helvetica, "Microsoft YaHei UI Light", "Microsoft YaHei UI", "微软雅黑";
 	margin:0;
 	padding:0;
 }
@@ -973,6 +973,11 @@ html {
 	margin-top:-40px;
 	z-index:180;
 }
+.project_show .bts{
+	top:49.7777%;
+	margin-top:0
+}
+.project_close{ display:block; position:absolute; width:0.41rem; height:0.41rem; top:0; right:-0.8rem;background:url(../images/vs.png) no-repeat 0 0;background-size:100%; z-index:999}
 .case_show .toleft,.project_show .leftBtn{
 	left:6%;
 }
@@ -1008,7 +1013,7 @@ html {
 	padding:6% 2.24% 0;
 	overflow:hidden;
 }
-.projectImg{position:absolute; width:78.402%; height:8.56rem; overflow:hidden; top:30%; left:11.45833%;}
+.projectImg{position:absolute; width:78.402%; height:8.56rem; top:30%; left:11.45833%;}
 .projectImg li{ position:absolute;width:100%; top:0;left:0; overflow:hidden; display:none}
 .projectImg img{ display:block; width:100%;}
 .pics{ width:60.216%; position:relative;}

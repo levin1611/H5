@@ -12,7 +12,6 @@
 <script src="js/imgscroll.js"></script>
 <script src="js/slide.js"></script>
 <script src="js/json.js"></script>
-<script src="js/swiper.js"></script>
 <script>
 	(function (doc, win) { 
 		 var docEl = doc.documentElement,
@@ -287,20 +286,12 @@
         <div class="slide">
           <div class="play">
             <ul id="pnl_scroll">
-              <li><a href=""> <img src="images/small/b1.jpg"></a> </li>
-              <li><a href=""> <img src="images/small/b2.jpg"></a> </li>
-              <li><a href=""> <img src="images/small/b3.jpg"></a> </li>
-              <li><a href=""> <img src="images/small/b4.jpg"></a> </li>
-              <li><a href=""> <img src="images/small/b1.jpg"></a> </li>
+              
             </ul>
           </div>
           <div class="tab">
             <ul id="pnl_btn">
-              <li> <a href="javascript:void(0);"> <img src="images/small/1.jpg"></a></li>
-              <li> <a href="javascript:void(0);"> <img src="images/small/2.jpg"></a></li>
-              <li> <a href="javascript:void(0);"> <img src="images/small/3.jpg"></a></li>
-              <li> <a href="javascript:void(0);" > <img src="images/small/4.jpg"></a></li>
-              <li> <a href="javascript:void(0);"> <img src="images/small/5.jpg"></a></li>
+             
             </ul>
           </div>
         </div>
@@ -321,8 +312,9 @@
 </div>
 <div class="project_show">
 	<a href="javascript:void(0)" class="bts leftBtn"><img src="images/about/left.png"></a>
-    <a href="javascript:void(0)" class="project_close"></a>
+    
     <div class="projectImg" id="box">
+    	<a href="javascript:void(0)" class="project_close"></a>
         <ul id="list" class="list">
             <li class="li"><img src="images/servise/banner1.jpg" alt=""></li>
             <li class="li"><img src="images/servise/banner2.jpg" alt=""></li>
@@ -406,6 +398,13 @@ $(function() {
 					$('#dowebok').fullpage.setAllowScrolling(true);
 					$('#dowebok').fullpage.setKeyboardScrolling(true);
 			});
+			$('.project_close').click(function() {
+				$('.project_show').fadeOut(500);
+				
+					$('#dowebok').fullpage.setAllowScrolling(true);
+					$('#dowebok').fullpage.setKeyboardScrolling(true);
+			});
+			
 			$('.next1').click(function() {
 				$('.box1').fadeOut(1000);
 					$('.box2').fadeIn(500);
@@ -609,7 +608,7 @@ $(function() {
 			$('.case_show').css({'z-index': showNo,'opacity':1});
 		}
 		function projectShow(id){
-			$('.project_show').show();
+			$('.project_show').fadeIn(500);
 			var showN = id -1;
 			var next = id+ 1;
 			if(id == 1){
@@ -629,6 +628,8 @@ $(function() {
 				$('#list > li').eq(showN).show();
 				$('#list > li').eq(showN).show().siblings().hide();
 			}
+			$('#dowebok').fullpage.setAllowScrolling(false);
+			$('#dowebok').fullpage.setKeyboardScrolling(false);
 			
 		}
 </script>
