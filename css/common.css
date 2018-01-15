@@ -5,6 +5,10 @@
 @font-face {
 	 font-family: pingfang; /*这里是说明调用来的字体名字*/
 	 src: url('../font/PingFangsc.ttf'); /*这里是字体文件路径*/
+	 src: url('../font/PingFangsc.ttf'); /* IE9 Compat Modes */
+	src: url('../font/PingFangsc.ttf?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../font/PingFangsc.ttf')  format('truetype'), /* Safari, Android, iOS */
+      
 }
 @font-face {
 	 font-family: pingfangsc; /*这里是说明调用来的字体名字*/
@@ -1004,7 +1008,7 @@ html {
 	padding:6% 2.24% 0;
 	overflow:hidden;
 }
-.projectImg{position:absolute; width:78.402%; height:47.555%; overflow:hidden; top:30%; left:11.45833%;}
+.projectImg{position:absolute; width:78.402%; height:8.56rem; overflow:hidden; top:30%; left:11.45833%;}
 .projectImg li{ position:absolute;width:100%; top:0;left:0; overflow:hidden; display:none}
 .projectImg img{ display:block; width:100%;}
 .pics{ width:60.216%; position:relative;}
