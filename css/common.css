@@ -1036,7 +1036,7 @@ html {
 }
 .projectImg{position:absolute; width:78.402%; height:8.56rem; top:30%; left:11.45833%;}
 .projectImg li{ position:absolute;width:100%; top:0;left:0; overflow:hidden; display:none}
-.memberBox{ position:absolute; width:90.30944%; top:12.6369%; left:50%; margin-left:-45.15472%;}
+.memberBox{ position:absolute; width:90.30944%; height:73.99666%; top:12.6369%; left:50%; margin-left:-45.15472%; overflow:hidden;}
 .memberBox li{ position:absolute;width:100%; top:0;left:0; overflow:hidden; z-index:200; display:none;}
 .memberBox li img{ display:block; width:100%;}
 .memberBox li a{ position:absolute; width:3.39rem; height:0.62rem; top:68.11451%; left:67.35798%; background:#202020; border:#202020 solid 1px; font-size:0.3rem; text-align:center; color:#fff; line-height:0.62rem;}
