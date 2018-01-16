@@ -165,17 +165,17 @@
     <h3>设计团队</h3>
     <div class="team">
     	<div class="member">
-        	<img src="" data-original="images/team/1.jpg">
+        	<img src="" data-original="images/team/1.jpg" onClick="memberShow(1)">
             <img src="" data-original="images/team/1.png">
-            <img src="" data-original="images/team/2.jpg">
+            <img src="" data-original="images/team/2.jpg" onClick="memberShow(2)">
             <img src="" data-original="images/team/2.png">
-            <img src="" data-original="images/team/3.jpg">
+            <img src="" data-original="images/team/3.jpg" onClick="memberShow(3)">
             <img src="" data-original="images/team/3.png">
         </div>
     	<div class="teambot">
         	<div class="teamAd"><img src="" data-original="images/team/bj.jpg"></div>
         	<div class="member">
-            	<img src="" data-original="images/team/4.jpg">
+            	<img src="" data-original="images/team/4.jpg" onClick="memberShow(4)">
             	<img src="" data-original="images/team/4.png">
             </div>	
         </div>
@@ -328,6 +328,25 @@
     </div>
     <a href="javascript:void(0)" class="bts rightBtn"><img src="images/about/right.png"></a>
 </div>
+<div class="member_show">
+	 <div class="memberpic"> <img src="images/member.png"> </div>
+     <a href="javascript:void(0)" class="member_close"></a>
+	<a href="javascript:void(0)" class="bts MleftBtn"><img src="images/about/left.png"></a>
+     	<ul id="member" class="memberBox">
+            <li class="li">
+            	<img src="images/team/banner1.jpg">
+                <a href="">提交设计需求</a>
+            </li>
+            <li class="li"><img src="images/team/banner2.jpg">
+                <a href="">提交设计需求</a></li>
+            <li class="li"><img src="images/team/banner3.jpg">
+                <a href="">提交设计需求</a></li>
+            <li class="li"><img src="images/team/banner4.jpg">
+                <a href="">提交设计需求</a></li>
+            
+        </ul>
+     <a href="javascript:void(0)" class="bts MrightBtn"><img src="images/about/right.png"></a>
+</div>
 <div class="floating">
   <div class="codeBox"> <img src="images/code.jpg">
     <p>关注「阔典」微信<br>
@@ -406,7 +425,13 @@ $(function() {
 					$('#dowebok').fullpage.setAllowScrolling(true);
 					$('#dowebok').fullpage.setKeyboardScrolling(true);
 			});
-			
+			$('.member_close').click(function() {
+				
+				$('.member_show').fadeOut(500);
+				
+					$('#dowebok').fullpage.setAllowScrolling(true);
+					$('#dowebok').fullpage.setKeyboardScrolling(true);
+			});
 			$('.next1').click(function() {
 				$('.box1').fadeOut(1000);
 					$('.box2').fadeIn(500);
@@ -632,6 +657,31 @@ $(function() {
 				$('.rightBtn').attr('onclick','projectShow('+next+')');
 				$('#list > li').eq(showN).show();
 				$('#list > li').eq(showN).show().siblings().hide();
+			}
+			$('#dowebok').fullpage.setAllowScrolling(false);
+			$('#dowebok').fullpage.setKeyboardScrolling(false);
+			
+		}
+		function memberShow(id){
+			$("img").lazyload(); 
+			$('.member_show').fadeIn(500);
+			var showN = id -1;
+			var next = id+ 1;
+			if(id == 1){	
+				$('.MleftBtn').attr('onclick','memberShow(4)');
+				$('.MrightBtn').attr('onclick','memberShow('+next+')')
+				$('#member > li').eq(showN).show();
+				$('#member > li').eq(showN).show().siblings().hide();
+			}else if(id == 3){	
+				$('.MleftBtn').attr('onclick','memberShow('+showN+')');
+				$('.MrightBtn').attr('onclick','memberShow(1)');
+				$('#member > li').eq(showN).show();
+				$('#member > li').eq(showN).show().siblings().hide();
+			}else {
+				$('.MleftBtn').attr('onclick','memberShow('+showN+')');
+				$('.MrightBtn').attr('onclick','memberShow('+next+')');
+				$('#member > li').eq(showN).show();
+				$('#member > li').eq(showN).show().siblings().hide();
 			}
 			$('#dowebok').fullpage.setAllowScrolling(false);
 			$('#dowebok').fullpage.setKeyboardScrolling(false);

@@ -941,7 +941,7 @@ html {
 	z-index:-100;
 	opacity:0;
 }
-.project_show{
+.project_show,.member_show{
 	position:fixed;
 	width:100%;
 	height:100%;
@@ -949,6 +949,20 @@ html {
 	left:0;
 	display:none;
 }
+.member_show{
+	width:85.27777%;
+	height:76.05555%;
+	top:15.53191%;
+	left:50%;
+	margin-left:-42.638888%;
+	background:#fff;
+	box-shadow: 0 0 56px rgba(1, 1, 1, 0.22);
+	-moz-box-shadow: 0 0 56px rgba(1, 1, 1, 0.42); /* 老的 Firefox */
+	-webkit-box-shadow: 0 0 56px rgba(1, 1, 1, 0.42);
+}
+.memberpic{ position:absolute; width:41%; height:8.6149%; left:16.77524%; top:-0.6rem;}
+.memberpic img{ display:block; width:100%;}
+
 .case_show .case_box {
 	position:absolute;
 	width:80.486111%;
@@ -965,7 +979,7 @@ html {
 	/*overflow:hidden;*/
 	padding-bottom:1.07rem;
 }
-.case_show .bts ,.project_show .bts{
+.case_show .bts ,.project_show .bts,.member_show .bts{
 	position:absolute;
 	width:20px;
 	height:80px;
@@ -978,13 +992,20 @@ html {
 	margin-top:0
 }
 .project_close{ display:block; position:absolute; width:0.41rem; height:0.41rem; top:0; right:-0.8rem;background:url(../images/vs.png) no-repeat 0 0;background-size:100%; z-index:999}
+.member_close{ position:absolute; width:0.7rem; height:0.7rem; top:0.32rem; right:0.36rem;background:url(../images/vs.png) no-repeat 0 0;background-size:100%; z-index:999}
 .case_show .toleft,.project_show .leftBtn{
 	left:6%;
 }
-.case_show .toright,.project_show .rightBtn {
+.member_show .MleftBtn{
+	left:0.35rem;
+}
+.case_show .toright,.project_show .rightBtn{
 	right:6%;
 }
-.case_show .bts img,.project_show .bts img {
+.member_show .MrightBtn{
+	right:0.35rem;
+}
+.case_show .bts img,.project_show .bts img ,.member_show .bts img{
 	width:100%;
 	overflow:hidden;
 }
@@ -1015,6 +1036,11 @@ html {
 }
 .projectImg{position:absolute; width:78.402%; height:8.56rem; top:30%; left:11.45833%;}
 .projectImg li{ position:absolute;width:100%; top:0;left:0; overflow:hidden; display:none}
+.memberBox{ position:absolute; width:90.30944%; top:12.6369%; left:50%; margin-left:-45.15472%;}
+.memberBox li{ position:absolute;width:100%; top:0;left:0; overflow:hidden; z-index:200; display:none;}
+.memberBox li img{ display:block; width:100%;}
+.memberBox li a{ position:absolute; width:3.39rem; height:0.62rem; top:68.11451%; left:67.35798%; background:#202020; border:#202020 solid 1px; font-size:0.3rem; text-align:center; color:#fff; line-height:0.62rem;}
+.memberBox li a:hover{ background:#fff; color:#202020;}
 .projectImg img{ display:block; width:100%;}
 .pics{ width:60.216%; position:relative;}
 .test{ width:34.473%;}
