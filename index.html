@@ -437,6 +437,7 @@ $(function() {
 		$(tabTitle + ":first").addClass("active");
 		$(tabContent).not(":first").hide();
 		$(tabTitle).hover(function() {
+			$("img").lazyload();
 			$(this).parent('li').siblings().removeClass("active").end().addClass("active");
 			var index = $(tabTitle).index( $(this) );
 				$(tabContent).eq(index).siblings(tabContent).hide().end().fadeIn();
