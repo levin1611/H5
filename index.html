@@ -88,7 +88,7 @@
     <h3>服务项目</h3>
     <div class="common">
       <div class="list">
-        <div class="style"> <img class="pag4I" onClick="projectShow(1)" src="" data-original="images/servise/s1.jpg"> <img class="pag4I" src="" data-original="images/servise/s1N.jpg"> <img class="pag4I" onClick="projectShow(2)" src="" data-original="images/servise/s2.jpg"> <img class="pag4I" src="" data-original="images/servise/s2N.jpg"> <img class="pag4I" onClick="projectShow(3)" src="" data-original="images/servise/s3.jpg"> <img class="pag4I" src="" data-original="images/servise/s3N.jpg"> <img class="pag4I" onClick="projectShow(4)" src="" data-original="images/servise/s4.jpg"> <img class="pag4I" src="" data-original="images/servise/s4N.jpg"> <img class="pag4I" onClick="projectShow(5)" src="" data-original="images/servise/s5.jpg"> <img class="pag4I" src="" data-original="images/servise/s5N.jpg"> <img class="pag4I" onClick="projectShow(6)" src="" data-original="images/servise/s6.jpg"> <img class="pag4I" src="" data-original="images/servise/s6N.jpg"> <img class="pag4I" onClick="projectShow(7)" src="" data-original="images/servise/s7.jpg"> <img src="" data-original="images/servise/s7N.jpg"> <img onClick="projectShow(8)" class="pag4I" src="" data-original="images/servise/s8.jpg"> <img class="pag4I" src="" data-original="images/servise/s8N.jpg"> </div>
+        <div class="style"> <img class="pag4I" onClick="projectShow(1)" src="" data-original="images/servise/s1.jpg"> <img class="pag4I" src="" data-original="images/servise/s1N.jpg"> <img class="pag4I" onClick="projectShow(2)" src="" data-original="images/servise/s2.jpg"> <img class="pag4I" src="" data-original="images/servise/s2N.jpg"> <img class="pag4I" onClick="projectShow(3)" src="" data-original="images/servise/s3.jpg"> <img class="pag4I" src="" data-original="images/servise/s3N.jpg"> <img class="pag4I" onClick="projectShow(4)" src="" data-original="images/servise/s4.jpg"> <img class="pag4I" src="" data-original="images/servise/s4N.jpg"> <img class="pag4I" onClick="projectShow(5)" src="" data-original="images/servise/s5.jpg"> <img class="pag4I" src="" data-original="images/servise/s5N.jpg"> <img class="pag4I" onClick="projectShow(6)" src="" data-original="images/servise/s6.jpg"> <img class="pag4I" src="" data-original="images/servise/s6N.jpg"> <img class="pag4I" onClick="projectShow(7)" src="" data-original="images/servise/s7.jpg"> <img class="pag4I" src="" data-original="images/servise/s7N.jpg"> <img onClick="projectShow(8)" class="pag4I" src="" data-original="images/servise/s8.jpg"> <img class="pag4I" src="" data-original="images/servise/s8N.jpg"> </div>
       </div>
       <div class="list">
         <div class="material"> <img class="pag4I" src="" data-original="images/servise/ma1.jpg"> <img class="pag4I" src="images/servise/ma1N.jpg"> <img class="pag4I" src="" data-original="images/servise/ma2.jpg"> <img class="pag4I" src="images/servise/ma2N.jpg"> <img class="pag4I" src="" data-original="images/servise/ma3.jpg"> <img class="pag4I" src="images/servise/ma3N.jpg"> <img class="pag4I" src="" data-original="images/servise/ma4.jpg"> <img class="pag4I" src="images/servise/ma4N.jpg"> <img class="pag4I" src="" data-original="images/servise/ma5.jpg"> <img class="pag4I" src="images/servise/ma5N.jpg"> <img class="pag4I" src="" data-original="images/servise/ma6.jpg"> <img class="pag4I" src="images/servise/ma6N.jpg"> <img class="pag4I" src="" data-original="images/servise/ma7.jpg"> <img class="pag4I" src="images/servise/ma7N.jpg"> <img class="pag4I" src="" data-original="images/servise/ma8.jpg"> <img class="pag4I" src="images/servise/ma8N.jpg"> </div>
@@ -125,10 +125,10 @@
       </div>
     </div>
     <ul class="service_menu">
-      <li class="active"><a href="javascript:void(0)">风 格</a></li>
-      <li><a href="javascript:void(0)">材 质</a></li>
-      <li><a href="javascript:void(0)">工 种</a></li>
-      <li><a href="javascript:void(0)">智能家居</a></li>
+      <li class="active"><a href="javascript:void(0)">风 格<input type="text"></a></li>
+      <li><a href="javascript:void(0)">材 质<input type="text"></a></li>
+      <li><a href="javascript:void(0)">工 种<input type="text"></a></li>
+      <li><a href="javascript:void(0)">智能家居<input type="text"></a></li>
     </ul>
   </div>
   <div class="section pag5">
@@ -381,14 +381,28 @@ $(function() {
 			
 			
 			if(index == 4) {
-			
 				$('.pages4').addClass('active');
+				
+			 }
+				
+				
 			}
+		});
+		var tabTitle = ".service_menu li a";
+		var tabInput = ".service_menu li a input";
+		var tabContent = ".common .list";
+		$(tabTitle + ":first").addClass("active");
+		$(tabContent).not(":first").hide();
+		$(tabTitle).mouseover(function(){
+			$("img.pag4I").lazyload();
+		})
+		$(tabTitle).hover(function() {
 			
 			
-		}
-	});
-	
+			$(this).parent('li').siblings().removeClass("active").end().addClass("active");
+			var index = $(tabTitle).index( $(this) );
+			$(tabContent).eq(index).siblings(tabContent).hide().end().fadeIn();
+		});
 			//$("#scroll").poposlides();
 			$('.ck-slide').ckSlide();
 			$('.pag5').ckSlide();
@@ -451,16 +465,7 @@ $(function() {
 					$('.box1').fadeIn(500);
 			});
 		
-		var tabTitle = ".service_menu li a";
-		var tabContent = ".common .list";
-		$(tabTitle + ":first").addClass("active");
-		$(tabContent).not(":first").hide();
-		$(tabTitle).hover(function() {
-			$("img").lazyload();
-			$(this).parent('li').siblings().removeClass("active").end().addClass("active");
-			var index = $(tabTitle).index( $(this) );
-				$(tabContent).eq(index).siblings(tabContent).hide().end().fadeIn();
-		});
+		
 		
 		
 });
