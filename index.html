@@ -316,14 +316,14 @@
     <div class="projectImg" id="box">
     	<a href="javascript:void(0)" class="project_close"></a>
         <ul id="list" class="list">
-            <li class="li"><img class="pI pag3I" src="" data-original="images/servise/banner1.jpg" alt=""></li>
-            <li class="li"><img class="pI pag3I" src="" data-original="images/servise/banner1.jpg" alt=""></li>
-            <li class="li"><img class="pI pag3I" src="" data-original="images/servise/banner2.jpg" alt=""></li>
-            <li class="li"><img class="pI pag3I" src="" data-original="images/servise/banner3.jpg" alt=""></li>
-            <li class="li"><img class="pI pag3I" src="" data-original="images/servise/banner4.jpg" alt=""></li>
-            <li class="li"><img class="pI pag3I" src="" data-original="images/servise/banner5.jpg" alt=""></li>
-            <li class="li"><img class="pI pag3I" src="" data-original="images/servise/banner6.jpg" alt=""></li>
-            <li class="li"><img class="pI pag3I" src="" data-original="images/servise/banner7.jpg" alt=""></li>
+            <li class="li"><img class="pI" src="images/servise/banner1.jpg" data-original=""></li>
+            <li class="li"><img class="pI" src="images/servise/banner2.jpg" data-original=""></li>
+            <li class="li"><img class="pI" src="images/servise/banner3.jpg" data-original="images/servise/banner2.jpg"></li>
+            <li class="li"><img class="pI" src="images/servise/banner4.jpg" data-original="images/servise/banner3.jpg"></li>
+            <li class="li"><img class="pI" src="images/servise/banner5.jpg" data-original="images/servise/banner4.jpg"></li>
+            <li class="li"><img class="pI" src="images/servise/banner6.jpg" data-original="images/servise/banner5.jpg"></li>
+            <li class="li"><img class="pI" src="images/servise/banner7.jpg" data-original="images/servise/banner6.jpg"></li>
+            <li class="li"><img class="pI" src="images/servise/banner8.jpg" data-original="images/servise/banner7.jpg"></li>
         </ul>
     </div>
     <a href="javascript:void(0)" class="bts rightBtn"><img src="images/about/right.png"></a>
@@ -334,14 +334,14 @@
 	<a href="javascript:void(0)" class="bts MleftBtn"><img src="images/about/left.png"></a>
      	<ul id="member" class="memberBox">
             <li class="li">
-            	<img class="mI pag5I" src="" data-original="images/team/banner1.jpg" >
+            	<img class="mI pag5I" src="images/team/banner1.jpg" data-original="images/team/banner1.jpg" >
                 <a href="">提交设计需求</a>
             </li>
-            <li class="li"><img class="mI pag5I" src="" data-original="images/team/banner2.jpg" >
+            <li class="li"><img class="mI" src="images/team/banner2.jpg" data-original="images/team/banner2.jpg" >
                 <a href="">提交设计需求</a></li>
-            <li class="li"><img class="mI pag5I" src="" data-original="images/team/banner3.jpg" >
+            <li class="li"><img class="mI" src="images/team/banner3.jpg" data-original="images/team/banner3.jpg" >
                 <a href="">提交设计需求</a></li>
-            <li class="li"><img class="mI pag5I" src="" data-original="images/team/banner4.jpg" >
+            <li class="li"><img class="mI" src="images/team/banner4.jpg" data-original="images/team/banner4.jpg" >
                 <a href="">提交设计需求</a></li>
             
         </ul>
@@ -689,7 +689,7 @@ $(function() {
 				$('.MrightBtn').attr('onclick','memberShow('+next+')')
 				$('#member > li').eq(showN).show();
 				$('#member > li').eq(showN).show().siblings().hide();
-			}else if(id == 3){	
+			}else if(id == 4){	
 				$('.MleftBtn').attr('onclick','memberShow('+showN+')');
 				$('.MrightBtn').attr('onclick','memberShow(1)');
 				$('#member > li').eq(showN).show();
