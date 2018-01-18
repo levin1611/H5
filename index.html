@@ -393,16 +393,15 @@ $(function() {
 		var tabContent = ".common .list";
 		$(tabTitle + ":first").addClass("active");
 		$(tabContent).not(":first").hide();
-		$(tabTitle).mouseover(function(){
-			$("img.pag4I").lazyload();
-		})
+		
 		$(tabTitle).hover(function() {
-			
-			
+			$(this).trigger('mouseOut');
+			$("img.pag4I").lazyload();
 			$(this).parent('li').siblings().removeClass("active").end().addClass("active");
 			var index = $(tabTitle).index( $(this) );
 			$(tabContent).eq(index).siblings(tabContent).hide().end().fadeIn();
 		});
+		
 			//$("#scroll").poposlides();
 			$('.ck-slide').ckSlide();
 			$('.pag5').ckSlide();
@@ -473,6 +472,7 @@ $(function() {
 		var picWith = $('.play').css('width');
 		picWith = picWith.substring(0,picWith.indexOf('p'));
 		$('.play').css('height',picWith);
+		
 		var cfg= {
 			"scroll":1000,//滚动时间
 			"stop": 3000,//停留时间
@@ -515,6 +515,7 @@ $(function() {
 		}
 		
 		function start_auto() {
+		
 			stop_auto();
 			run.time=setTimeout(run,cfg.stop);
 		}
@@ -561,11 +562,11 @@ $(function() {
 				var imgS = caseDate.case1.imgSmall;
 				var imgB = caseDate.case1.imgBig;
 			    for(var i=0;i<imgS.length;i++){
-					var liS = ' <li><a href=""> <img src="images/small/1/'+imgS[i]+'"></a> </li>';
+					var liS = ' <li><a href="javascript:void(0)"> <img src="images/small/1/'+imgS[i]+'"></a> </li>';
 					$('#pnl_btn').append(liS);
 				}
 				for(var i=0;i<imgB.length;i++){
-					var liB = ' <li><a href=""> <img src="images/small/1/'+imgB[i]+'"></a> </li>';
+					var liB = ' <li><a href="javascript:void(0)"> <img src="images/small/1/'+imgB[i]+'"></a> </li>';
 					$('#pnl_scroll').append(liB);
 				}
 			}else if(id == 2){
@@ -579,11 +580,11 @@ $(function() {
 				var imgS = caseDate.case2.imgSmall;
 				var imgB = caseDate.case2.imgBig;
 			    for(var i=0;i<imgS.length;i++){
-					var liS = ' <li><a href=""> <img src="images/small/2/'+imgS[i]+'"></a> </li>';
+					var liS = ' <li><a href="javascript:void(0)"> <img src="images/small/2/'+imgS[i]+'"></a> </li>';
 					$('#pnl_btn').append(liS);
 				}
 				for(var i=0;i<imgB.length;i++){
-					var liB = ' <li><a href=""> <img src="images/small/2/'+imgB[i]+'"></a> </li>';
+					var liB = ' <li><a href="javascript:void(0)"> <img src="images/small/2/'+imgB[i]+'"></a> </li>';
 					$('#pnl_scroll').append(liB);
 				}
 			}else if(id == 3){
@@ -597,11 +598,11 @@ $(function() {
 				var imgS = caseDate.case3.imgSmall;
 				var imgB = caseDate.case3.imgBig;
 			    for(var i=0;i<imgS.length;i++){
-					var liS = ' <li><a href=""> <img src="images/small/3/'+imgS[i]+'"></a> </li>';
+					var liS = ' <li><a href="javascript:void(0)"> <img src="images/small/3/'+imgS[i]+'"></a> </li>';
 					$('#pnl_btn').append(liS);
 				}
 				for(var i=0;i<imgB.length;i++){
-					var liB = ' <li><a href=""> <img src="images/small/3/'+imgB[i]+'"></a> </li>';
+					var liB = ' <li><a href="javascript:void(0)"> <img src="images/small/3/'+imgB[i]+'"></a> </li>';
 					$('#pnl_scroll').append(liB);
 				}
 			}
@@ -629,9 +630,7 @@ $(function() {
 			}).mouseleave(function() {
 				$("#pnl_together").hide();
 			});
-			$('#seeMore').click(function() {
-				$('#tlt1').css('height','auto');
-			});
+			
 			showNo = 200
 			$('.case_show').css({'z-index': showNo,'opacity':1});
 		}
@@ -686,6 +685,7 @@ $(function() {
 			$('#dowebok').fullpage.setKeyboardScrolling(false);
 			
 		}
+		
 </script>
 </body>
 </html>
