@@ -1,19 +1,4 @@
-@font-face {
-	 font-family: Helvetica; /*这里是说明调用来的字体名字*/
-	 src: url('../font/HelveticaBold.ttf'); /*这里是字体文件路径*/
-}
-@font-face {
-	 font-family: pingfang; /*这里是说明调用来的字体名字*/
-	 src: url('../font/PingFangsc.ttf'); /*这里是字体文件路径*/
-	 src: url('../font/PingFangsc.ttf'); /* IE9 Compat Modes */
-	src: url('../font/PingFangsc.ttf?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('../font/PingFangsc.ttf')  format('truetype'), /* Safari, Android, iOS */
-      
-}
-@font-face {
-	 font-family: pingfangsc; /*这里是说明调用来的字体名字*/
-	 src: url('../font/PingFang-SC-Regular.otf'); /*这里是字体文件路径*/
-}
+
 body{ max-width:2880px; overflow:hidden; width:100%; margin:0 auto;}
 a, a:hover, a:active {
 	text-decoration:none;
@@ -49,7 +34,7 @@ html {
 .logo img{ display:block; width:100%;}*/
 .banner{ position:absolute; top:0; left:0; width:100%; height:100%;}
 .banner1{ background:url(../images/01bj.jpg) no-repeat center 0; background-size:100%;}
-.banner2{ background:url(../images/02bj.jpg) no-repeat center center; background-size:100%;}
+/*.banner2{ background:url(../images/02bj.jpg) no-repeat center center; background-size:100%;}*/
 .banner1 img.bg {
 	display:block; width:78.9729%; margin:6% 0 0 9.44444%;
 }
@@ -194,11 +179,11 @@ html {
 	text-align:right;
 	margin:0;
 }
-.word .more a {
+/*.word .more a {
 	padding-right:30px;
 	background:url(../images/x.png) no-repeat right center;
 	background-size:20px;
-}
+}*/
 .pag2 .word strong {
 	display:block;
 	font-size:1.25em !important;
